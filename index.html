@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Train Scheduler</title>
+
+  <!-- JS librarys  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/javascript/logic.js"></script>
+  <!-- CSS styles  -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4 text-center">All Aboard!</h1>
+            <p class="lead text-center">This display shows which trains are going where, and when they'll be getting here. also, you can see how often they come, and how far out they are!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-12 bg-primary">
+          <h4 class="text-white">Current Train Schedule</h4>
+        </div>
+      </div>
+    </div>
+      <div class="col-sm-12 bg-secondary">
+        <table class="table">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <!-- train name display  -->
+            <th scope="col">Name</th>
+            <!-- destination display  -->
+            <th scope="col">Destination</th class="border">
+            <!-- Frequency display -->
+            <th scope="col">Frequency (min)</th class="border">
+            <!-- Arrival display  -->
+            <th scope="col">Next Arrival</th class="border">
+            <!-- interval display  -->
+            <th scope="col">Minutes Away</th class="border">
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Example #1</td>
+            <td>timbuk-tu</td>
+            <td>20 min</td>
+            <td>0400</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Example #2</td>
+            <td>B.F. - Nowhere</td>
+            <td>15 min</td>
+            <td>0900</td>
+            <td>45</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row border border-primary rounded mt-3">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-12 bg-primary">
+            <h4 class="text-white">Add Train</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 bg-light">
+        <span id="todo-item">Train Line Name: </span><br><input id="trainName" type="text">
+        <br>
+        <span id="todo-item">Destination:</span><br> <input id="trainDest" type="text">
+        <br>
+        <span id="todo-item">First Departure time (24HR Format):</span><br> <input id="trainFirst" type="text">
+        <br>
+        <span id="todo-item">Interval (minutes):</span><br> <input id="trainInt" type="text"><br><input id="submitLine"
+          value="Submit" type="submit" class="btn btn-primary mt-2 mb-2">
+        <div class="col-sm-1">
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
